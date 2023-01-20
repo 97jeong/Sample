@@ -76,6 +76,7 @@ window.onload = function() {
     var itemcd = document.querySelector('#itemcd');
     var btn = document.querySelector('#barcode_scan');
     btn.onclick = function() {
+	itemcd.value = "test";
 	barcodeScanner.postMessage("scan Barcode");
     };
 	
