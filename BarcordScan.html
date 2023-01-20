@@ -88,12 +88,13 @@ window.onload = function() {
         itemcd.value = e.data;
     }
 	
-};
+    // 2023.01.19 바코드 스캔 리스너
+    parent.window.addEventListener("barcodeScanner", (event) => {
+        var barcode = event.detail.barcode;
 
-    function scanBarcode() {
-	$("#itemcd").val("Test");
-        barcodeScanner.postMessage("scan Barcode");
-	}
+        itemcd.value = barcode;
+    });
+};
 </script>
 </body>
 </html>
