@@ -26,9 +26,7 @@
                         <input style="width:95%; height: 30px; padding: 0; font-size: 0.8rem;" id = "itemcd" name="itemcd" autofocus type="text"  value="" placeholder="상품코드를 입력하세요.">
                     </td>
                     <td style="width:20%; height:30px; padding: 0; text-align: left;">
-                        <div style="height:30px; padding: 0; text-align: left;" id= "barcode_scan" onlick="scanBarcode()">
-                            <img style="width: 60px; height: 30px;"src="barcode.PNG" alt="스캔">
-                        </div>
+                        <input style="width: 60px; height: 30px;"id = "scan_barcode" type="button" value="바코드 스캔">
                     </td>
                 </tr>
                 <tr style="width:100%;">
@@ -74,7 +72,7 @@
 <script type="text/javascript">
 window.onload = function() {
     var itemcd = document.querySelector('#itemcd');
-    var btn = document.querySelector('#barcode_scan');
+    var btn = document.querySelector('#scan_barcode');
     btn.onclick = function() {
 	itemcd.value = "test";
 	barcodeScanner.postMessage("scan Barcode");
