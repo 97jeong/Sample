@@ -83,6 +83,7 @@
     }
 
     function scanBarcode() {
+	$("#itemcd").val(e.data);
         barcodeScanner.postMessage("scan Barcode");
 	}
 </script>
