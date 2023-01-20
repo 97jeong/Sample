@@ -71,16 +71,25 @@
         </form>
     </div>
 
- <script type="text/javascript">
+<script type="text/javascript">
+window.onload = function() {
+    var itemcd = document.querySelector('#itemcd');
+    var btn = document.querySelector('#barcode_scan');
+    btn.onclick = function() {
+	barcodeScanner.postMessage("scan Barcode");
+    };
+	
     // 2023.01.18 테스트
     //for iphone
     parent.barcodeScanner.onmessage = function (e) {
-        $("#itemcd").val(e.data);
+        itemcd.value = e.data;
     }
     // for android
     barcodeScanner.onmessage = function (e) {
-        $("#itemcd").val(e.data);
+        itemcd.value = e.data;
     }
+	
+};
 
     function scanBarcode() {
 	$("#itemcd").val("Test");
